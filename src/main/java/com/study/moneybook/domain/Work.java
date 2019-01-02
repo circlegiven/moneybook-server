@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Work {
 
+    private Long id;
+
     // 제목
     private String name;
 
