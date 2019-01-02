@@ -1,4 +1,4 @@
-package com.study.moneybook.entity;
+package com.study.moneybook.repository;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;

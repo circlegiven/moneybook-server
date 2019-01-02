@@ -1,11 +1,11 @@
-package com.study.moneybook.entity;
+package com.study.moneybook.repository;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "money_type")
-public class MoneyTypeEntity {
+@Table(name = "payment_type")
+public class PaymentTypeEntity {
 
     @Id
     @Column(name = "id")
