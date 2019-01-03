@@ -18,7 +18,7 @@ public class PaymentTypeService {
     public List<PaymentType> findAll() {
         Iterable<PaymentTypeEntity> sampleList = paymentTypeRepository.findAll();
         List<PaymentType> resultList = new ArrayList<>();
-        sampleList.iterator().forEachRemaining(value -> resultList.add(new PaymentType(value.getId(), value.getName())));
+        sampleList.iterator().forEachRemaining(value -> resultList.add(new PaymentType(value.getName(), value.getWorkType())));
         return resultList;
     }
 }

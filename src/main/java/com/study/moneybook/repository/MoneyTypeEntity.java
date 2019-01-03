@@ -3,15 +3,15 @@ package com.study.moneybook.repository;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MONEY_TYPE")
+@Table(name = "money_type")
 public class MoneyTypeEntity {
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
 
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     public Long getId() {

@@ -1,24 +1,32 @@
 package com.study.moneybook.repository;
 
+import com.study.moneybook.domain.WorkType;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "PAYMENT_TYPE")
-public class PaymentTypeEntity {
+@Table(name = "payment_type")
+public class PaymentTypeEntity implements Serializable {
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue
     private Long id;
 
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private WorkType workType;
+
 
     public String getName() {
         return name;
+    }
+
+    public WorkType getWorkType() {
+        return workType;
     }
 }
