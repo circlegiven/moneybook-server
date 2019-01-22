@@ -1,5 +1,6 @@
 package com.study.moneybook.repository;
 
+import com.study.moneybook.domain.PaymentType;
 import com.study.moneybook.domain.WorkType;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "work")
+@Table(name = "tb_work")
 public class WorkEntity {
 
     @Id
@@ -23,13 +24,13 @@ public class WorkEntity {
     @Enumerated(EnumType.STRING)
     private WorkType type;
 
-    @ManyToOne(targetEntity = PaymentTypeEntity.class)
-    @JoinColumn(name = "payment_type_id")
-    private PaymentTypeEntity paymentType;
+    @Column(name = "payment_type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentType;
 
-    @ManyToOne(targetEntity = MoneyTypeEntity.class)
-    @JoinColumn(name = "money_type_id")
-    private MoneyTypeEntity moneyType;
+    @ManyToOne(targetEntity = CategoryEntity.class)
+    @JoinColumn(name = "category")
+    private CategoryEntity category;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date targetTime;

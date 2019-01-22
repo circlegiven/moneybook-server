@@ -5,7 +5,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/moneybook?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: moneybook
-    password: circlegiven
+    password: moneybook00
   jpa:
     database: mysql
     show-sql: false
