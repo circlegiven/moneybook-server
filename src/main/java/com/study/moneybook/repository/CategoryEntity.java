@@ -18,6 +18,7 @@ public class CategoryEntity {
 
     private String name;
 
+    @Column(name = "work_type")
     @Enumerated(EnumType.STRING)
     private WorkType workType;
 

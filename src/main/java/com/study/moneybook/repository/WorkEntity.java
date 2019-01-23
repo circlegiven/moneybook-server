@@ -35,6 +35,10 @@ public class WorkEntity {
     @Column(name = "comment")
     private String comment;
 
+    @Column(name = "target_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date targetTime;
+
+    @Column(name = "group_time")
+    private Date groupTime;
 }
