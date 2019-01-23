@@ -21,4 +21,13 @@ public class CategoryService {
         originList.iterator().forEachRemaining(value -> resultList.add(new Category(value.getName(), value.getWorkType())));
         return resultList;
     }
+
+    public Category getCategory(String name) {
+        CategoryEntity categoryEntity = categoryRepository.findCategoryByName(name);
+        Category result = null;
+        if (null != categoryEntity) {
+            result = new Category(categoryEntity.getName(), categoryEntity.getWorkType());
+        }
+        return result;
+    }
 }

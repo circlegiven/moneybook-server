@@ -1,7 +1,6 @@
 package com.study.moneybook;
 
 import com.study.moneybook.domain.Category;
-import com.study.moneybook.repository.CategoryEntity;
 import com.study.moneybook.service.CategoryService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +18,19 @@ public class CategoryTest {
 
     @Test
     public void getCategoryList() {
-         List<Category> result = categoryService.getCategoryList();
+        List<Category> result = categoryService.getCategoryList();
+        System.out.println(result);
+    }
+
+    @Test
+    public void getCategoryOfExist() {
+        Category result = categoryService.getCategory("급여");
+        System.out.println(result);
+    }
+
+    @Test
+    public void getCategoryOfNotExist() {
+        Category result = categoryService.getCategory("테스트");
         System.out.println(result);
     }
 }
