@@ -38,4 +38,12 @@ public class CategoryEntity {
     public WorkType getWorkType() {
         return workType;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWorkType(WorkType workType) {
+        this.workType = workType;
+    }
 }

@@ -2,7 +2,6 @@ package com.study.moneybook.value;
 
 import java.io.Serializable;
 
-// TODO Serializable을 왜 구현하는가?
 public class Result implements Serializable {
 
     protected Integer code;

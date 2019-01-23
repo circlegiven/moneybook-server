@@ -19,6 +19,3 @@ spring:
         c3p0:
           timeout: 1800
           idle_test_period: 100
-  jackson:
-    serialization:
-      FAIL_ON_EMPTY_BEANS: false
