@@ -18,4 +18,12 @@ public class CategoryEntity {
 
     @Enumerated(EnumType.STRING)
     private WorkType workType;
+
+    public String getName() {
+        return name;
+    }
+
+    public WorkType getWorkType() {
+        return workType;
+    }
 }

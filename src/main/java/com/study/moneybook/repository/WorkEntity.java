@@ -17,8 +17,8 @@ public class WorkEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "money", nullable = false)
+    private String money;
 
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -32,15 +32,9 @@ public class WorkEntity {
     @JoinColumn(name = "category")
     private CategoryEntity category;
 
+    @Column(name = "comment")
+    private String comment;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date targetTime;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdTime;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedTime;
-
-
-
 }
