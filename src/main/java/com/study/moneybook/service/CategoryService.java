@@ -1,6 +1,7 @@
 package com.study.moneybook.service;
 
 import com.study.moneybook.domain.Category;
+import com.study.moneybook.domain.WorkType;
 import com.study.moneybook.repository.CategoryEntity;
 import com.study.moneybook.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,19 @@ public class CategoryService {
             result = new Category(categoryEntity.getName(), categoryEntity.getWorkType());
         }
         return result;
+    }
+
+    public Category createCategory(String name, WorkType workType) {
+        // 이미 없는 카테고리 라면
+        if (null == getCategory(name)) {
+            CategoryEntity entity = categoryRepository.save(new CategoryEntity(name, workType));
+            Category result = null;
+            if (null != entity) {
+                result = new Category(entity.getName(), entity.getWorkType());
+            }
+            return result;
+        } else {
+            return null;
+        }
     }
 }

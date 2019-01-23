@@ -2,6 +2,7 @@ package com.study.moneybook.repository;
 
 import com.study.moneybook.domain.PaymentType;
 import com.study.moneybook.domain.WorkType;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -10,14 +11,24 @@ import javax.persistence.*;
 public class CategoryEntity {
 
     @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue
-    private Long id;
+    @Column(name = "id")
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private String id;
 
     private String name;
 
     @Enumerated(EnumType.STRING)
     private WorkType workType;
+
+    public CategoryEntity() {
+
+    }
+
+    public CategoryEntity(String name, WorkType workType) {
+        this.name = name;
+        this.workType = workType;
+    }
 
     public String getName() {
         return name;

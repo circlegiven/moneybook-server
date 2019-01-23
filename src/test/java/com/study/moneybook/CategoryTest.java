@@ -1,6 +1,7 @@
 package com.study.moneybook;
 
 import com.study.moneybook.domain.Category;
+import com.study.moneybook.domain.WorkType;
 import com.study.moneybook.service.CategoryService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,6 +32,12 @@ public class CategoryTest {
     @Test
     public void getCategoryOfNotExist() {
         Category result = categoryService.getCategory("테스트");
+        System.out.println(result);
+    }
+
+    @Test
+    public void createCategory() {
+        Category result = categoryService.createCategory("통신비", WorkType.EXPENSE);
         System.out.println(result);
     }
 }

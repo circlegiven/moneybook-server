@@ -20,4 +20,12 @@ public class CategoryController {
         result.setData(categoryService.getCategoryList());
         return result;
     }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public Result createCategory() {
+        Result result = new Result();
+
+        return result;
+    }
+
 }
