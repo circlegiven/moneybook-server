@@ -1,5 +1,5 @@
 package com.study.moneybook.domain;
 
 public enum PaymentType {
-    CASH, CREADIT
+    CASH, CREDIT
 }

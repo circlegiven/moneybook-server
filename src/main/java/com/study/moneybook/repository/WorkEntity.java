@@ -5,7 +5,6 @@ import com.study.moneybook.domain.WorkType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "tb_work")
@@ -32,15 +31,7 @@ public class WorkEntity {
     @JoinColumn(name = "category")
     private CategoryEntity category;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date targetTime;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdTime;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedTime;
-
-
+    @Column(name = "time", nullable = false)    // 데이터 YYYYMMDDHHmm의 형태
+    private String  time;
 
 }
