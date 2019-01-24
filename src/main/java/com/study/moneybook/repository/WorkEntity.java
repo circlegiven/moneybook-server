@@ -5,6 +5,7 @@ import com.study.moneybook.domain.WorkType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tb_work")
@@ -16,8 +17,8 @@ public class WorkEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "money", nullable = false)
+    private String money;
 
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)
