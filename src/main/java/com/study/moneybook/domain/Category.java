@@ -1,5 +1,7 @@
 package com.study.moneybook.domain;
 
+import com.study.moneybook.repository.CategoryEntity;
+
 import java.io.Serializable;
 
 public class Category implements Serializable {
@@ -8,9 +10,9 @@ public class Category implements Serializable {
 
     private WorkType workType;
 
-    public Category(String name, WorkType workType) {
-        this.name = name;
-        this.workType = workType;
+    public Category(CategoryEntity entity) {
+        this.name = entity.getName();
+        this.workType = entity.getWorkType();
     }
 
     public String getName() {

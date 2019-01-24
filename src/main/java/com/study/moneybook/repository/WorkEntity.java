@@ -5,16 +5,15 @@ import com.study.moneybook.domain.WorkType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "tb_work")
 public class WorkEntity {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", updatable = false, nullable = false)
     private String id;
 
     @Column(name = "money", nullable = false)
@@ -29,10 +28,10 @@ public class WorkEntity {
     private PaymentType paymentType;
 
     @ManyToOne(targetEntity = CategoryEntity.class)
-    @JoinColumn(name = "category")
+    @JoinColumn(name = "category", nullable = false)
     private CategoryEntity category;
 
-    @Column(name = "time", nullable = false)    // 데이터 YYYYMMDDHHmm의 형태
-    private String  time;
+    @Column(name = "date_time", nullable = false)    // 데이터 YYYYMMDDHHmm의 형태
+    private String  dateTime;
 
 }

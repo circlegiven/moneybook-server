@@ -19,15 +19,15 @@ public class CategoryService {
     public List<Category> getCategoryList() {
         Iterable<CategoryEntity> originList = categoryRepository.findAll();
         List<Category> resultList = new ArrayList<>();
-        originList.iterator().forEachRemaining(value -> resultList.add(new Category(value.getName(), value.getWorkType())));
+        originList.iterator().forEachRemaining(value -> resultList.add(new Category(value)));
         return resultList;
     }
 
     public Category getCategory(String name) {
-        CategoryEntity categoryEntity = categoryRepository.findCategoryByName(name);
+        CategoryEntity categoryEntity = categoryRepository.findByName(name);
         Category result = null;
         if (null != categoryEntity) {
-            result = new Category(categoryEntity.getName(), categoryEntity.getWorkType());
+            result = new Category(categoryEntity);
         }
         return result;
     }
@@ -38,7 +38,7 @@ public class CategoryService {
             CategoryEntity entity = categoryRepository.save(new CategoryEntity(name, workType));
             Category result = null;
             if (null != entity) {
-                result = new Category(entity.getName(), entity.getWorkType());
+                result = new Category(entity);
             }
             return result;
         } else {

@@ -1,10 +1,9 @@
 package com.study.moneybook.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.Date;
 import java.util.List;
 
-public interface WorkRepository extends JpaRepository<WorkEntity, String> {
-    List<WorkEntity> findWorkEntitiesByTargetTime(Date date);
+public interface WorkRepository extends CrudRepository<WorkEntity, String> {
+    List<WorkEntity> findByDateTimeStartingWith(String dateString);
 }
