@@ -10,6 +10,8 @@ public class Category implements Serializable {
 
     private WorkType workType;
 
+    public Category() {}
+
     public Category(CategoryEntity entity) {
         this.name = entity.getName();
         this.workType = entity.getWorkType();

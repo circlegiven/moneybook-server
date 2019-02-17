@@ -11,14 +11,15 @@ public class Work {
     // 데이터 YYYYMMDDHHmm의 형태
     private String  dateTime;
 
+    public Work() {}
 
-    public Work(WorkEntity workEntity) {
-        this.id = workEntity.getId();
-        this.money = workEntity.getMoney();
-        this.type = workEntity.getType().toString();
-        this.paymentType = workEntity.getPaymentType().toString();
-        this.category = workEntity.getCategory().getName(); // 굳이 category의 아이디를 가지고 있을 필요가 있을까?
-        this.dateTime = workEntity.getDateTime();
+    public Work(WorkEntity entity) {
+        this.id = entity.getId();
+        this.money = entity.getMoney();
+        this.type = entity.getType().toString();
+        this.paymentType = entity.getPaymentType().toString();
+        this.category = entity.getCategory().getName(); // 굳이 category의 아이디를 가지고 있을 필요가 있을까?
+        this.dateTime = entity.getDateTime();
     }
 
     public String getId() {
